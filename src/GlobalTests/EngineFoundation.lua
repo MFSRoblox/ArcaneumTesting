@@ -20,7 +20,7 @@ local GlobalExpectations = {
     IsPublic = "boolean";
     IsTesting = "boolean";
 }
-local TestInfo = TestingModule.NewTest({
+local TestInfo = TestingService.NewTest({
     ToRun = true;
     TestName = "Engine Foundation";
     ToPrintProcess = PrintDebug;
