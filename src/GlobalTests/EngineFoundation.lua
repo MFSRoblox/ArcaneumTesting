@@ -1,5 +1,6 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local TestingModule = require(ReplicatedStorage.ArcaneumTesting)
+local TestingService = require(ReplicatedStorage.ArcaneumTesting)
+TestingService:CheckVersion("1.0.0")
 local PrintDebug = false
 local function debugPrint(...)
     if PrintDebug == true then
