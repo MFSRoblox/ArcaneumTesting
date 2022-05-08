@@ -14,7 +14,7 @@ ClassService:CheckVersion("1.1.0")
 local InternalClass = ClassService:GetClass("InternalClass")
 InternalClass:CheckVersion("1.2.0")
 local Utilities = ArcaneumGlobals:GetGlobal("Utilities")
-Utilities:CheckVersion("1.0.0")
+Utilities:CheckVersion("1.1.0")
 local TestCaseClass = require(script.TestCase)
 local TestResultClass = require(script.TestResult)
 local Tester:Tester = InternalClass:Extend({
