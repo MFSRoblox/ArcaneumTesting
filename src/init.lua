@@ -19,29 +19,22 @@ local TestCollectionClass = require(script.TestCollection)
 --[=[
     @server
     @client
-    @class ArcaneumTesting
-    A module that allows you to create and run tests on the environment. It is designed to test and use the ArcaneumFramework.
+    @tag Testing
+    @class ArcaneumTests
 ]=]
-local TestBot: TestBot = Class:Extend(
+local ArcaneumTests: ArcaneumTests = Class:Extend(
     {
-        ClassName = "ArcaneumTestingervice";
+        ClassName = "ArcaneumTestService";
         ArcaneumGlobals = ArcaneumGlobals;
         Version = "1.0.0";
         CoreModule = script;
         TestCollections = {};
     }
 )
-export type TestBot = {
+export type ArcaneumTests = {
     TestCollections: Dictionary<TestCollectionClass.TestCollection>;
-} & typeof(TestBot) & typeof(Class)
-local TestInfoInterface = require(script.TestCollection.TestInfoInterface)
---[=[
-
-]=]
-function TestBot.NewTest(NewInfo: TestInfoInterface.TestInfo): TestInfoInterface.TestInfo
-    return TestInfoInterface.new(NewInfo)
-end
-function TestBot:New(Tests: Folder?): TestBot
+} & typeof(ArcaneumTests) & typeof(Class)
+function ArcaneumTests:New(Tests: Folder?): ArcaneumTests
     local NewBot = self:Extend({});
     local TestCollections = {}
     TestCollections.GlobalTests = TestCollectionClass:New("GlobalTests",script.GlobalTests);
@@ -54,7 +47,7 @@ function TestBot:New(Tests: Folder?): TestBot
     return NewBot
 end
 
-function TestBot:Run()
+function ArcaneumTests:Run()
     local TestCollections = self.TestCollections
     local FailedCounter, WarnCounter, SkippedCounter = TestCollections.GlobalTests:Run()
     if TestCollections.OtherTests ~= nil then
@@ -67,11 +60,11 @@ function TestBot:Run()
     self:Destroy()
 end
 
-function TestBot:Destroy()
+function ArcaneumTests:Destroy()
     for _,v in pairs(self.TestCollections) do
         v:Destroy()
     end
     return Class.Destroy(self)
 end
 
-return TestBot
+return ArcaneumTests
