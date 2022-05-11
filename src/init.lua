@@ -17,12 +17,12 @@ local TestCollectionClass = require(script.TestCollection)
 --[=[
     @server
     @client
+    @tag Testing
     @class ArcaneumTesting
-    A module that allows you to create and run tests on the environment. It is designed to test and use the ArcaneumFramework.
 ]=]
 local ArcaneumTesting: ArcaneumTesting = Class:Extend(
     {
-        ClassName = "ArcaneumTestingervice";
+        ClassName = "ArcaneumTestService";
         ArcaneumGlobals = ArcaneumGlobals;
         Version = "1.0.0";
         CoreModule = script;

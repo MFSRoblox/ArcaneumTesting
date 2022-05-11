@@ -1,0 +1,6 @@
+[package]
+exclude = ["node_modules"]
+name = "mfsroblox/arcaneumtesting"
+realm = "shared"
+registry = "https://github.com/MFSRoblox/wally-index"
+version = "1.0.0"
