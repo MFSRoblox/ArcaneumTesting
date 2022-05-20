@@ -23,9 +23,6 @@ local Tester:Tester = InternalClass:Extend({
     CoreModule = script;
 })
 export type Tester = {
-    Version: number;
-    Object: ModuleScript;
-    Name: string;
     DisplayName: string;
     PrintProcess: boolean;
     Tests: Array<TestCaseClass.TestCase>;

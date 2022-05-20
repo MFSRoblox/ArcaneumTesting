@@ -19,8 +19,6 @@ local TestResultClass: TestResult = InternalClass:Extend({
     CoreModule = script;
 })
 export type TestResult = {
-    Version: number;
-    Object: ModuleScript;
     Status: string;--"Successful"|"Critical Failure"|"Skipped"|"Failure"|"Unassigned";
     Result: any;
 } & typeof(TestResultClass)

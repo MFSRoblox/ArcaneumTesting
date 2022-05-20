@@ -19,8 +19,6 @@ local TestCaseClass:TestCase = InternalClass:Extend({
     CoreModule = script;
 })
 export type TestCase = {
-    Version: number;
-    Object: ModuleScript;
     StopOnFailure: boolean;
     PrintProcess: boolean;
     Steps: Array<(any) -> (any)>;
